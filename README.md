@@ -186,3 +186,11 @@ app.js
 
 ### I get errors while using React.Fragments
 React.Fragments does not correspond to an actual DOM node, so `react-sticky` can not calculate its position. Because of this, React.Fragments is not supported.
+
+### I need to trigger a manual check after content changes
+In some situations, you may want to manually trigger a check for sticky layout after rendering. You can manually trigger a scroll event:
+
+```js
+// In a lifecycle method, event handler, etc.
+window.dispatchEvent(new Event('scroll'));
+```
